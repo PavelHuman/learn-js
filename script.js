@@ -1,24 +1,40 @@
-console.log(1);
+'use strict';
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели', ''); 
+let num = 20;
 
-const personelMovieDB = {
-    count: numberOfFilms,
-    movies: {},
-    actors: {},
-    genres: [],
-    privat: false
+function showiirstMessage(text) {
+    console.log("text");
+    let num = 10;
+    console.log(num);  
+}
+
+showiirstMessage("Hello World!");
+console.log(num);
+
+//function calc(a, b) {
+    //return (a + b);
+//}
+
+//console.log(calc(4, 3));
+//console.log(calc(5, 6));
+//console.log(calc(10, 6));
+
+function ret() {
+    let num = 50;
+
+    return num;
+}
+
+const anotherNum =ret();
+console.log(anotherNum);
+
+const logger = function() {
+    console.log("Hello");
 };
 
-const a = prompt('Один из последних просмотренных фильмов?', ''),
-      b = prompt('На сколько оцените его?', ''),
-      c = prompt('Один из последних просмотренных фильмов?', ''),
-      d = prompt('На сколько оцените его?', '');
+logger();
 
-personelMovieDB.movies[a] = b;
-personelMovieDB.movies[c] = d;
-
-console. log(personelMovieDB);
-
-
-
+const calc = (a, b) => {
+    console.log('1');
+    return a + b;
+};
