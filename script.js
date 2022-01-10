@@ -1,40 +1,40 @@
-'use strict';
+const num = 20;
 
-let num = 20;
-
-function showiirstMessage(text) {
-    console.log("text");
-    let num = 10;
-    console.log(num);  
+function showiirstMessage() {
+  console.log('text');
+  const num = 10;
+  console.log(num);
 }
 
-showiirstMessage("Hello World!");
+showiirstMessage('Hello World!');
 console.log(num);
 
-//function calc(a, b) {
-    //return (a + b);
-//}
+// function calc(a, b) {
+// return (a + b);
+// }
 
-//console.log(calc(4, 3));
-//console.log(calc(5, 6));
-//console.log(calc(10, 6));
+// console.log(calc(4, 3));
+// console.log(calc(5, 6));
+// console.log(calc(10, 6));
 
 function ret() {
-    let num = 50;
+  const num = 50;
 
-    return num;
+  return num;
 }
 
-const anotherNum =ret();
+const anotherNum = ret();
 console.log(anotherNum);
 
-const logger = function() {
-    console.log("Hello");
+const logger = function logger() {
+  console.log('Hello');
 };
 
 logger();
 
 const calc = (a, b) => {
-    console.log('1');
-    return a + b;
+  console.log('1');
+  return a + b;
 };
+
+calc();

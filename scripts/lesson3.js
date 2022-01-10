@@ -1,3 +1,3 @@
 export default () => {
-    console.log('lesson3.js')
-}
+  console.log('lesson3.js');
+};
