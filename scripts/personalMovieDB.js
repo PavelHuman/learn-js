@@ -54,10 +54,19 @@ export default () => {
     },
     writeYourGenres() {
       for (let i = 1; i <= 3; i++) {
-        personalMovieDB.genres[i - 1] = prompt(`Ваш любимый жанр под номером ${i}`);
+        const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+
+        if (genre === '' || genre === null) {
+          console.log('Вы ввели некорректные данные или не ввели их вовсе');
+          i--;
+        } else {
+          personalMovieDB.genres[i - 1] = genre;
+        }
       }
+      personalMovieDB.genres.forEach((item, i) => {
+        console.log(`Любимый жанр ${i + 1} - это ${item}`);
+      });
     },
   };
-
   return personalMovieDB;
 };
