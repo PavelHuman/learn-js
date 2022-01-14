@@ -1,11 +1,5 @@
-import lesson1 from './lesson1.js';
-import lesson2 from './lesson2.js';
-import lesson3 from './lesson3.js';
-import initMovieDB from './movie.js';
+import initMovieDB from './personalMovieDB.js';
 
-console.log('scripts/index.js');
+console.log('test');
 
-// lesson1();
-lesson2();
-lesson3();
-initMovieDB();
+window.personalMovieDB = initMovieDB();
