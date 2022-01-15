@@ -54,8 +54,8 @@ export default () => {
     },
     writeYourGenres() {
       const neededGenresQty = 3;
-      while (personalMovieDB.genres.length <= neededGenresQty) {
-        const genre = prompt(`Ваш любимый жанр под номером ${personalMovieDB.genres.length}`);
+      while (personalMovieDB.genres.length < neededGenresQty) {
+        const genre = prompt(`Ваш любимый жанр под номером ${personalMovieDB.genres.length + 1}`);
         if (genre === '' || genre === null) {
           console.log('Вы ввели некорректные данные или не ввели их вовсе');
         } else {
