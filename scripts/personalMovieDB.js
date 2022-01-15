@@ -53,9 +53,10 @@ export default () => {
       }
     },
     writeYourGenres() {
-      for (let i = 1; i <= 3; i++) {
-        const genre = prompt(`Ваш любимый жанр под номером ${i}`);
+      const neededGenresQty = 3;
 
+      for (let i = 1; i <= neededGenresQty; i++) {
+        const genre = prompt(`Ваш любимый жанр под номером ${i}`);
         if (genre === '' || genre === null) {
           console.log('Вы ввели некорректные данные или не ввели их вовсе');
           i--;
