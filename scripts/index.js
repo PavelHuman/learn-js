@@ -1,5 +1,3 @@
-import initMovieDB from './personalMovieDB.js';
+import initDomApiPractice from './script.js';
 
-console.log('test');
-
-window.personalMovieDB = initMovieDB();
+initDomApiPractice();
