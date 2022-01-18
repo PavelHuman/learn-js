@@ -1,47 +1,4 @@
-/* Задания на урок:
-
-1) Удалить все рекламные блоки со страницы (правая часть сайта)
-    1. Определить селектор элемента // CSS Selectors
-    2. Получить все элеметы DOM (объявить переменную и сохранить в неё ссылку на коллекцию элементов)
-    3. проходить по каждому элементу
-    4. удалить элемент
-
-    */
-
-const advImages = document.querySelectorAll('.promo__adv img'); // 1 & 2
-advImages.forEach((advImage) => advImage.remove()); // 3 & 4
-
-/*
-2) Изменить жанр фильма, поменять "комедия" на "драма"
-    1. Определить селектор элемента // CSS Selectors
-    2. Получить элемет DOM (объявить переменную и сохранить в неё ссылку на  элемент)
-    3. Изменить контент элемента
-*/
-
-const genreContainer = document.querySelector('.promo__genre'); // 1 & 2
-genreContainer.innerHTML = 'Драма';
-
-/*
-3) Изменить задний фон постера с фильмом на изображение "bg.jpg". Оно лежит в папке img.
-Реализовать только при помощи JS
-    1. Определить селектор элемента // CSS Selectors
-    2. Получить элемет DOM (объявить переменную и сохранить в неё ссылку на  элемент)
-    3. Изменить CSS-свойство элемента background-image: url(./img/bg.jpg)
-
-*/
-
-/* 4) Список фильмов на странице сформировать на основании данных из этого JS файла.
-Отсортировать их по алфавиту
-
-    1. Отсортировать Список фильмов по алфавиту
-2. Создать для каждого фильма элемент list item <li></li>
-3. Вставить в list item контент (текст)
-4. Создать Элемент списка <ul></ul>
-5. Вставить все list item'ы элемент сприска <ul></ul>
-6. Найти контейнер для списка
-7. Вставить элемент списка <ul></ul> в контейнер
-
-*/
+/* eslint-disable no-use-before-define */
 
 const movieDB = {
   movies: [
@@ -53,6 +10,36 @@ const movieDB = {
   ],
 };
 
-/* 5) Добавить нумерацию выведенных фильмов
-    1. Заменить список <ul></ul> на <ol></ol>
-*/
+removeAdv();
+fixGenre();
+applyBackgoundImg();
+
+/* *** */
+
+function removeAdv() {
+  const advImages = document.querySelectorAll('.promo__adv img');
+  advImages.forEach((advImage) => advImage.remove());
+}
+
+function fixGenre() {
+  const genreContainer = document.querySelector('.promo__genre');
+  genreContainer.innerHTML = 'Драма';
+}
+
+function applyBackgoundImg() {
+  const poster = document.querySelector('.promo__bg');
+  poster.style.backgroundImage = 'url("./img/bg.jpg")';
+}
+
+const movieList = document.querySelector('.promo__interactive-list');
+movieList.innerHTML = '';
+
+movieDB.movies.sort();
+
+movieDB.movies.forEach((film, i) => {
+  movieList.innerHTML += `
+   <li class="promo__interactive-item">${i + 1} ${film}
+   <div class="delete"></div>
+   </li>
+`;
+});
