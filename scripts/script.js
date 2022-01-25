@@ -3,32 +3,32 @@ export default () => {
   console.log(number);
 };
 
- let myText;
- myText = 'hello, world!';
- alert(myText);
+let myText;
+myText = 'hello, world!';
+alert(myText);
 
- const siteURL = "https://www.google.com";
- alert(siteURL);
+const siteURL = 'https://www.google.com';
+alert(siteURL);
 
- let speed = 10;
- let time = 5; alert(speed * time);
- let speed1 = 85;
- let time1 = 1.5;
- alert(speed1 * time1);
+const speed = 10;
+const time = 5; alert(speed * time);
+const speed1 = 85;
+const time1 = 1.5;
+alert(speed1 * time1);
 
- function showDistance(speed,time) {
- alert(speed * time);
- }
+function showDistance(speed, time) {
+  alert(speed * time);
+}
 
- showDistance(10, 5);
- showDistance(85, 1.5);
- showDistance(12, 9);
- showDistance(42, 21);
+showDistance(10, 5);
+showDistance(85, 1.5);
+showDistance(12, 9);
+showDistance(42, 21);
 
- function sayHello() {
- alert("hello!");
- }
- sayHello();
+function sayHello() {
+  alert('hello!');
+}
+sayHello();
 
 function getDistance(speed, time) {
   const distance = speed * time;
@@ -86,21 +86,63 @@ do {
 
 // setTimeout, setInterval и requestAnimationFrame.
 
-//alert(foo);
-//var foo = 'hello!';
+// alert(foo);
+// var foo = 'hello!';
 
-function showDistance(speed, time) {
-  alert(speed * time);
-}
-
-showDistance(10, 5);
-showDistance(85, 1.5);
-showDistance(12, 9);
-showDistance(42, 21);
-
-function calculateRectangleArea(lenght, width) {
+function calculateRectangleArea(length, width) {
   return length * width;
 }
 
-let roomArea = calculateRectngleArea(10, 10);
+const roomArea = calculateRectangleArea(10, 10);
 alert(roomArea);
+
+function youSayGoodBye() {
+  alert('Good Bye!');
+
+  function andISayHello() {
+    alert('hello!');
+  }
+  return andISayHello;
+}
+youSayGoodBye()();
+
+function User(name) {
+  // методом объекта становится вложенная функция
+  this.sayHi = function () {
+    alert(name);
+  };
+}
+
+const user = new User('John');
+user.sayHi();
+
+function checkAge(age) {
+  if (age > 18) {
+    return true;
+  }
+  return confirm('А родители разрешили?');
+}
+
+const age = prompt('Сколько вам лет?', 18);
+
+if (checkAge(age)) {
+  alert('Доступ получен');
+} else {
+  alert('Доступ закрыт');
+}
+
+function stopWatch() {
+  const startTime = Date.now();
+
+  function getDelay() {
+    const elapsedTime = Date.now() - startTime;
+    alert(elapsedTime);
+  }
+  return getDelay;
+}
+const timer = stopWatch();
+
+for (let i = 0; i < 1000000; i++) {
+  const foo = Math.random() * 10000;
+}
+timer();

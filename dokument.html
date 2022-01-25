@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>Console Stuff</title>
+ <style> #container {
+ padding: 50px;
+ }
+ #myButton {
+ font-family: sans-serif;
+ font-size: 24px;
+ font-weight: lighter;
+ background-color: #FFF;
+ border: 3px #333 solid;
+ padding: 15px;
+ }
+ #myButton:hover {
+ background-color: aliceblue;
+ }
+ </style>
+</head>
+<body>
+ <div id="container">
+ <button id="myButton">click me</button>
+ </div>
+ <script>
+ let myButton = document.querySelector("#myButton");
+ myButton.addEventListener("click", doSomething, false);
+ function doSomething(e) {
+ alert("Is this working?");
+ }
+ function doSomething(e) {
+  console.log("We clicked on: " + e.target.id);
+ }
+ let counter = 0;
+
+ function doSomething(e) {
+   counter++;
+
+   console.log("Button clicked " + counter + " times!");
+
+   if (counter == 3) {
+     showMore();
+   }
+ }
+ function showMore() {
+  console.warn("This is a warning!");
+  console.error("This is an error!");
+ }
+ </script>
+</body>
+</html>
+
