@@ -56,3 +56,27 @@ function capitalizeItUp(item) {
 }
 let newNames = names.map(capitalizeItUp);
 console.log(newNames);
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+let evenNumbers = numbers.filter(function (item) {
+  return (item % 2 == 0);
+});
+console.log(evenNumbers);
+
+let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+let total = numbers.reduce(function(total, current) {
+  return total + current;
+}, 0);
+console.log(total);
+
+let words = ["Where", "do", "you", "want", "to", "go", "today?"];
+
+let phrase = words.reduce(function (total, current, index) {
+  if (index == 0) {
+    return current;
+  } else {
+    return total + " " + current;
+  }
+}, "");
+console.log(phrase);
