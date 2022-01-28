@@ -13,31 +13,31 @@ function chapter16() {
   const remainder = total % 7;
   const more = (1 + average * 10) / 5;
 
-  let i = 4;
-  i += 1;
+  let f = 4;
+  f += 1;
 
-  let i = 100;
-  i -= 2;
+  let c = 100;
+  c -= 2;
 
-  let i = 100;
-  i /= 2;
+  let y = 100;
+  y /= 2;
 
   i++;
   i -= 2;
   i /= 2;
 
-  let i = 4;
+  let w = 4;
   const j = i++;
-  console.log(i);
+  console.log(w);
   console.log(j);
 
   let i = 4;
-  const j = ++i;
+  const b = ++i;
   console.log(i);
-  console.log(j);
+  console.log(b);
 
   let leet = 0o2471; //восьмеричные
-  let leet = 0x539; //шеснадцатеричные
+  let leet1 = 0x539; //шеснадцатеричные
 
   let hexValue = parseInt('FFFFFF', 16);
   let octalValue = parseInt('011', 8);
@@ -49,8 +49,8 @@ function chapter16() {
   let numberTne = 3;
   console.log(numberOne + numberTne);
 
-  let numberOne = parseInt("45");
-  let numberTne = 3;
+  let numberOne1 = parseInt("45");
+  let numberTne1 = 3;
   console.log(numberOne + numberTne);
 
   function getCircumference(radius) {
@@ -95,4 +95,5 @@ function getRandomNumber(low, high) {
 }
 let foo = getRandomNumber(0, 10);
 console.log(foo)
+}
 export default chapter16;
