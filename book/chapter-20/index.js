@@ -1,3 +1,5 @@
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable max-classes-per-file */
 function chapter20() {
   console.log('chapter-20');
 

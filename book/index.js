@@ -4,7 +4,9 @@
 // import chapter18 from './chapter-18.js';
 // import chapter19 from './chapter-19.js';
 // import chapter20 from './chapter-20/index.js';
-import chapter21 from './chapter-21.js';
+
+// import chapter21 from './chapter-21.js';
+import chapter22 from './chapter-22.js';
 
 function book() {
   console.log('book');
@@ -14,6 +16,7 @@ function book() {
   // chapter18();
   // chapter19();
   // chapter20();
-  chapter21();
+  // chapter21();
+  // chapter22();
 }
 export default book;

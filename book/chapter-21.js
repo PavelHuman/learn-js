@@ -28,5 +28,7 @@ function chapter21() {
   console.log(new String('A') == new String('A')); // false
   console.log([1, 2, 3] == [1, 2, 3]); // false
   console.log({ a: 1 } == { a: 1 }); // false
+  let num;
+  console.log('num', num == num);
 }
 export default chapter21;
