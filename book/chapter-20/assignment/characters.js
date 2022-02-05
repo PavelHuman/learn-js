@@ -20,6 +20,6 @@ const characters = [
     sex: 'male',
     age: 46,
   },
-]
+];
 
-export default characters
+export default characters;
