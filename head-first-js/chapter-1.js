@@ -26,17 +26,15 @@ function chapter1() {
 
   (9 / 5) * temp + 32; // 50
 
-  color == 'orange' // pink-false, orange-true.
+  color == 'orange'; // pink-false, orange-true.
 
-  name + ", " + "you've won!" // Martha you've won!
+  `${name}, ` + 'you\'ve won!'; // Martha you've won!
 
-  yourLevel > 5 // 2 - false, 5 - false, 7 - true.
+  yourLevel > 5(level * points) + bonus; // 153300
 
-    (level * points) + bonus; // 153300
+  color != 'orange'; // color = pink; - true
 
-  color != 'orange' // color = pink; - true
-
-  1000 + "108"; // "1000108"
+  `${1000}108`; // "1000108"
 
   let scoops = 5;
   while (scoops > 0) {
