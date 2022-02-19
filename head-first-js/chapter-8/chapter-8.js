@@ -7,37 +7,13 @@ function chapter8() {
     },
     displayHit(location) {
       const cell1 = document.getElementById(location);
-      cell1.cellsetAttribute('class', 'hit');
+      cell1.setAttribute('class', 'hit');
     },
     displayMiss(location) {
       const cell2 = document.getElementById(location);
-      cell2.cellsetAttribute('class', 'miss');
+      cell2.setAttribute('class', 'miss');
     },
   };
-  // view.displayMiss('00');
-  // view.displayHit('34');
-  // view.displayMiss('55');
-  // view.displayHit('12');
-  // view.displayMiss('25');
-  // view.displayHit('26');
-  // view.displayMessage('Tap tap, is this thing on?');
-
-  // const ships = [{ locations: ['31', '41', '51'], hits: ['', '', ''] },
-  // { locations: ['14', '24', '34'], hits: ['', 'hit', ''] },
-  // { locations: ['00', '01', '02'], hits: ['hit', '', ''] }];
-
-  // const ship2 = ships[1];
-  // const { locations } = ship2;
-  // console.log(`Location is ${locations[1]}`);
-
-  // const ship3 = ships[2];
-  // const hits = ship3.hits;
-  // if (hits[0] === 'hit') {
-  //   console.log('Ouch, hit on third ship at location one');
-  // }
-  // let ship1 = ships[0];
-  // let hits = ship1.hits;
-  // hits[2] = "hit";
 
   const model = {
     boardSize: 7,
@@ -46,10 +22,11 @@ function chapter8() {
     shipsSunk: 0,
 
     ships: [{ locations: ['06', '16', '26'], hits: ['', '', ''] },
-      { locations: ['24', '34', '44'], hits: ['', '', ''] },
-      { locations: ['10', '11', '12'], hits: ['', '', ''] }],
+    { locations: ['24', '34', '44'], hits: ['', '', ''] },
+    { locations: ['10', '11', '12'], hits: ['', '', ''] }],
 
     fire(guess) {
+      console.log({ guess });
       for (let i = 0; i < this.numShips; i++) {
         const ship = this.ships[i];
         const index = ship.locations.indexOf(guess);
@@ -88,4 +65,3 @@ function chapter8() {
   model.fire('11');
   model.fire('10');
 }
-export default chapter8;
