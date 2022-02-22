@@ -1,5 +1,6 @@
-import { controller } from "./controller.js"
-import { model } from './model.js'
+import { controller } from './controller.js';
+import { model } from './model.js';
+
 function chapter8() {
   console.log('chapter8');
 
