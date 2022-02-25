@@ -6,7 +6,8 @@
 // import chapter6 from './chapter-6.js';
 // import chapter7 from './chapter-7.js';
 // import chapter9 from './chapter-9/chapter-9.js';
-import chapter10 from './chapter-10.js';
+// import chapter10 from './chapter-10.js';
+import chapter11 from './chapter-11.js';
 
 export default () => {
   console.log('head first');
@@ -18,5 +19,6 @@ export default () => {
   // chapter6();
   // chapter7();
   // chapter9();
-  chapter10();
+  // chapter10();
+  chapter11();
 };
