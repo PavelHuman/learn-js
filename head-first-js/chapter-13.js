@@ -6,6 +6,26 @@ function chapter13() {
     this.breed = breed;
     this.weight = weight;
   }
+
+  function ShowDog(name, breed, weight, handler) {
+    Dog.call(this, name, breed, weight);
+    this.handler = handler;
+  }
+  ShowDog.prototype = new Dog();
+  ShowDog.prototype.constructor = ShowDog;
+  ShowDog.prototype.league = 'Webville';
+  ShowDog.prototype.stack = function () {
+    console.log('Stack');
+  };
+  ShowDog.prototype.bait = function () {
+    console.log('Bait');
+  };
+  ShowDog.prototype.gait = function () {
+    console.log(`${kind}ing`);
+  };
+  ShowDog.prototype.groom = function () {
+    console.log('Groom');
+  };
   Dog.prototype.species = 'Canine';
   Dog.prototype.bark = function () {
     if (this.weight > 25) {
@@ -22,17 +42,53 @@ function chapter13() {
   Dog.prototype.wag = function () {
     console.log('Wag!');
   };
+  Dog.prototype.sitting = false;
 
+  Dog.prototype.set = function () {
+    if (this.sitting) {
+      console.log(`${this.name} is already sitting`);
+    } else {
+      this.sitting = true;
+      console.log(`${this.name} is now sitting`);
+    }
+  };
+  const scotty = new ShowDog('Scotty', 'Scottish Terrier', 15, 'Cookie');
+  if (scotty instanceof Dog) {
+    console.log('Scotty is a Dog');
+  }
+  if (scotty instanceof ShowDog) {
+    console.log('Scotty is a ShowDog');
+  }
   const fido = new Dog('Fido', 'Mixed', 38);
+  if (fido instanceof Dog) {
+    console.log('Fido is a Dog');
+  }
+  if (fido instanceof ShowDog) {
+    console.log('Fido is a ShowDog');
+  }
+  console.log(`Fido constructor is ${fido.constructor}`);
+  console.log(`Scotty constructor is ${scotty.constructor}`);
+
   const fluffy = new Dog('Fluffy', 'Poodle', 30);
   const spot = new Dog('Spot', 'Chihuahua', 10);
   const barnaby = new Dog('Barnaby', 'Basset Hound', 55);
+
   Dog.prototype.sit = function () {
     console.log(`${this.name} is now sitting`);
   };
   spot.bark = function () {
     console.log(`${this.name} says WOOF!`);
   };
+  scotty.stack();
+  scotty.bark();
+  console.log(scotty.league);
+  console.log(scotty.species);
+
+  barnaby.sit();
+  barnaby.sit();
+  spot.sit();
+  spot.sit();
+
   barnaby.sit();
 
   fido.bark();
@@ -46,6 +102,7 @@ function chapter13() {
   spot.bark();
   spot.run();
   spot.wag();
+
   function Game() {
     this.level = 0;
   }
@@ -97,13 +154,36 @@ function chapter13() {
   };
 
   console.log(`${robby.name} was made by ${robby.maker
-  } in ${robby.year} and is owned by ${robby.owner}`);
+    } in ${robby.year} and is owned by ${robby.owner}`);
 
   robby.makeCoffee();
   robby.blinkLights();
 
   console.log(`${rosie.name} was made by ${rosie.maker
-  } in ${rosie.year} and is owned by ${rosie.owner}`);
+    } in ${rosie.year} and is owned by ${rosie.owner}`);
   rosie.cleanHouse();
+
+  function SpaceRobot(name, year, owner, homePlanet) {
+    this.name = name;
+    this.year = year;
+    this.owner = owner;
+    this.homePlanet = homePlanet;
+  }
+  SpaceRobot.prototype = new Robot();
+  SpaceRobot.prototype.speak = function () {
+    alert(`${this.name} says Sir, If I may venture an opinion...`);
+  };
+  SpaceRobot.prototype.pilot = function () {
+    alert(`${this.name} says Thrusters? Are they important?`);
+  };
+  const c3po = new SpaceRobot('C3PO', 1977, 'Luke Skywalker', 'Tatooine');
+  c3po.speak();
+  c3po.pilot();
+  console.log(`${c3po.name} was made by ${c3po.maker}`);
+
+  const simon = new SpaceRobot('Simon', 2009, 'Carla Diana', 'Earth');
+  simon.makeCoffee();
+  simon.blinkLights();
+  simon.speak();
 }
 export default chapter13;
