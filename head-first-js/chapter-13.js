@@ -1,3 +1,4 @@
+/* eslint-disable no-extend-native */
 function chapter13() {
   console.log('chapter13');
 
@@ -154,13 +155,13 @@ function chapter13() {
   };
 
   console.log(`${robby.name} was made by ${robby.maker
-    } in ${robby.year} and is owned by ${robby.owner}`);
+  } in ${robby.year} and is owned by ${robby.owner}`);
 
   robby.makeCoffee();
   robby.blinkLights();
 
   console.log(`${rosie.name} was made by ${rosie.maker
-    } in ${rosie.year} and is owned by ${rosie.owner}`);
+  } in ${rosie.year} and is owned by ${rosie.owner}`);
   rosie.cleanHouse();
 
   function SpaceRobot(name, year, owner, homePlanet) {
@@ -185,5 +186,46 @@ function chapter13() {
   simon.makeCoffee();
   simon.blinkLights();
   simon.speak();
+
+  String.prototype.cliche = function () {
+    const cliche = ['lock and load', 'touch base', 'open the kimono'];
+    for (let i = 0; i < cliche.length; i++) {
+      const index = this.indexOf(cliche[i]);
+      if (index >= 0) {
+        return true;
+      }
+    }
+    return false;
+  };
+  const sentences = ["I'll send my car around to pick you up.",
+    "Let's touch base in the morning and see where we are",
+    "We don't want to open the kimono, we just want to inform them."];
+  for (let i = 0; i < sentences.length; i++) {
+    const phrase = sentences[i];
+    if (phrase.cliche()) {
+      console.log(`CLICHE ALERT: ${phrase}`);
+    }
+  }
+  String.prototype.palindrome = function () {
+    const len = this.length - 1;
+    for (let i = 0; i <= len; i++) {
+      if (this.charAt(i) !== this.charAt(len - i)) {
+        return false;
+      }
+      if (i === (len - i)) {
+        return true;
+      }
+    }
+    return true;
+  };
+  const palind = ['deed', 'mom', 'wow'];
+  for (let i = 0; i < palind.length; i++) {
+    const pal = palind[i];
+    if (pal.palindrome()) {
+      console.log(`'${pal}' is a palindrome`);
+    } else {
+      console.log(`'${pal}' is NOT a palindrome`);
+    }
+  }
 }
 export default chapter13;
